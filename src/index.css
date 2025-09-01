@@ -1,0 +1,140 @@
+/* reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* body + background (garanta que /public/background-landing.png exista) */
+html,body,#root { height: 100%; }
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background: #000;
+}
+
+/* o background da landing (cobre tudo) */
+.app-root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/background-landing.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  filter: brightness(0.6);
+}
+
+/* header */
+.site-header {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  pointer-events: auto;
+}
+.logo { height: 56px; width: auto; position: absolute; left: 40px; top: 16px; }
+
+/* nav central */
+.nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.nav-link {
+  color: #ddd;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.nav-link:hover { color: #fff; }
+
+/* account button */
+.account-btn {
+  position: absolute;
+  right: 40px;
+  top: 22px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* hero area */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* canvas ocupa toda hero */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+/* título sobre o canvas */
+.title-box {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+.title-box h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 8vw;
+  color: #ddd;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+.subtitle {
+  display: inline-block;
+  margin-top: 18px;
+  border: 2px solid rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.25);
+  font-weight: 600;
+}
+
+/* scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 12;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.scroll-indicator img { width: 36px; animation: floatY 2s ease-in-out infinite; opacity: 0.9; }
+
+/* small animation */
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* next section */
+.next-section {
+  min-height: 100vh;
+  padding: 96px 24px;
+  background: #000;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
