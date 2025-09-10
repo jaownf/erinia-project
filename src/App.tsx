@@ -20,11 +20,11 @@ function EriniaLogo3D(props: JSX.IntrinsicElements["group"]) {
     box.getCenter(center);
 
     // posiciona o grupo para que o centro do modelo fique na origem
-    group.current.position.set(-center.x, -center.y, -center.z);
+    group.current.position.set(-center.x, -center.y + 1, -center.z);
 
     // escala para caber bem na câmera (ajusta o divisor se quiser maior/menor)
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const desired = 3.0; // ajuste de tamanho visual: quanto maior, maior o modelo
+    const maxDim = Math.max(2,2,1);
+    const desired = 2.0; // ajuste de tamanho visual: quanto maior, maior o modelo
     const scale = desired / maxDim;
     group.current.scale.setScalar(scale);
   }, [gltf]);
@@ -39,7 +39,7 @@ useGLTF.preload("/erinia.glb");
 
 /* -------------------------------- App -------------------------------- */
 export default function App() {
-  const menu = ["Home", "History", "Bestiary", "Store", "Download"];
+  const menu = ["JOGO", "BESTIÁRIO", "COMUNIDADE", "LOJA", ];
 
   const onScrollDown = () => {
     const el = document.getElementById("next-section");
@@ -65,7 +65,7 @@ export default function App() {
       <section className="hero">
         {/* Canvas ocupa toda a área da hero */}
         <div className="hero-canvas">
-          <Canvas camera={{ position: [0, 0, 6], fov: 45 }} shadows>
+          <Canvas camera={{ position: [2  , -20, 18], fov: 30 }} shadows>
             <ambientLight intensity={0.8} />
             <directionalLight position={[5, 5, 5]} intensity={1.2} />
             <Suspense fallback={null}>
@@ -76,7 +76,7 @@ export default function App() {
               enablePan={false}
               enableZoom={false}
               autoRotate
-              autoRotateSpeed={0.6}
+              autoRotateSpeed={1.0}
               minPolarAngle={Math.PI / 2.5}
               maxPolarAngle={Math.PI - Math.PI / 2.5}
             />
@@ -84,8 +84,7 @@ export default function App() {
         </div>
 
         {/* Title box sobre o Canvas */}
-        <div className="title-box">
-          <h1>ERINIA</h1>
+        <div className="title-box"> 
           <p className="subtitle">UMA HISTÓRIA DE SUPERAÇÃO, ERINIA.</p>
         </div>
 
