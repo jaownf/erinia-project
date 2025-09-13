@@ -8,17 +8,19 @@ body {
   color: #fff;
   background: #000;
 }
-
-/* o background da landing (cobre tudo) */
-.app-root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("/background-landing.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  filter: brightness(0.6);
+html{
+  scroll-behavior: smooth;
+}
+/* o background da landing (cobre só a seção hero) */
+.hero {
+  background: url("./assets/background/landing-back.png") no-repeat center center;
+  background-size: 100% 100%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  z-index: 5;
+  overflow: hidden;
 }
 
 /* header */
@@ -34,7 +36,20 @@ body {
   gap: 32px;
   pointer-events: auto;
 }
-.logo { height: 56px; width: auto; position: absolute; left: 60px; top: -12px; }
+
+.logo {
+  height: 56px;
+  width: auto; 
+  position: absolute; 
+  left: 60px; 
+  top: -12px; 
+  transition: 0.2 ease-out;
+
+}
+
+.logo-link{
+  transition: 0.2 ease-out;
+}
 
 /* nav central */
 .nav {
@@ -68,15 +83,7 @@ body {
   font-weight: 700;
 }
 
-/* hero area */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: block;
-  z-index: 5;
-  overflow: hidden;
-}
+/* hero area - definição já está acima com background */
 
 /* canvas ocupa toda hero */
 .hero-canvas {
@@ -133,13 +140,240 @@ body {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
-
+.first-background-transition{
+  background: url(./assets/background/first-transition.png) no-repeat center center;
+  background-size: 100% 100%;
+  height: 200px; /* altura maior para mostrar a transição completa */
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  margin-top: -1px; /* garante que não há gap entre hero e transição */
+}
 /* next section */
 .next-section {
   min-height: 100vh;
-  padding: 96px 24px;
-  background: #000;
+  padding: 60px 24px;
+  background: url(./assets/background/body-back.png) no-repeat center center;
+  background-size: 100% 100%;
   color: #fff;
   z-index: 1;
   position: relative;
+  margin-top: -1px; /* garante que não há gap entre transição e body */
+}
+
+/* Botão de Download */
+.download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.download-btn {
+  background: #8B4513;
+  border: 2px solid #DAA520;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #A0522D;
+  transform: translateY(-2px);
+}
+
+.download-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.download-free {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Títulos das seções */
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Seção de Novidades */
+.news-section {
+  margin-bottom: 80px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.carousel-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #DAA520;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.carousel-item {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 280px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.carousel-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.carousel-item p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Seção Sobre o Jogo */
+.about-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #fff;
+}
+
+.learn-more-btn {
+  background: #8B4513;
+  border: 2px solid #DAA520;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #A0522D;
+  transform: translateY(-2px);
+}
+
+/* Cards em sequência */
+.cards-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.map-image, .bestiary-image {
+  width: 100%;
+  height: 200px;
+  background: #333;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #DAA520;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    max-width: 300px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+/* footer */
+.footer {
+  background: url(./assets/background/footer-back.png) no-repeat center center;
+  background-size: 100% 100%;
+  min-height: 300px; /* altura maior para mostrar o footer completo */
+  padding: 40px 24px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  margin-top: -1px; /* garante que não há gap entre body e footer */
 }

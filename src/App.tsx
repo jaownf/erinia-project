@@ -1,11 +1,11 @@
-import React, { Suspense, useMemo, useRef, useEffect } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 
 
 /* ---------- 3D Model component (centraliza e escala automaticamente) ---------- */
-function EriniaLogo3D(props: JSX.IntrinsicElements["group"]) {
+function EriniaLogo3D(props: React.JSX.IntrinsicElements["group"]) {
   const gltf = useGLTF("/erinia.glb", true);
   const group = useRef<THREE.Group | null>(null);
 
@@ -50,7 +50,8 @@ export default function App() {
     <div className="app-root">
       {/* Header */}
       <header className="site-header">
-        <img src="/logo-erinia.png" alt="Erinia logo" className="logo" />
+
+        <a href="#" className="logo-link"><img src="./src/assets/logo/logo-erinia.png   " alt="Erinia logo" className="logo" /></a>
         <nav className="nav">
           {menu.map((m) => (
             <a key={m} href={`#${m.toLowerCase()}`} className="nav-link">
@@ -94,18 +95,78 @@ export default function App() {
           className="scroll-indicator"
           aria-label="Scroll down"
         >
-          <img src="/scroll-down.png" alt="scroll" />
+          <img src="/src/assets/components/scroll-down.png" alt="scroll" />
         </button>
       </section>
-
-      {/* black placeholder section */}
+      <div className="first-background-transition"></div>
+      
+      {/* seção principal de conteúdo */}
       <section id="next-section" className="next-section">
-        <h2>Coming next</h2>
-        <p>
-          This section is a placeholder template. We'll add content as you share
-          the rest.
-        </p>
+        {/* Botão de Download */}
+        <div className="download-section">
+          <button className="download-btn">
+            <span className="download-text">BAIXAR AGORA</span>
+            <span className="download-free">GRÁTIS</span>
+          </button>
+        </div>
+
+        {/* Seção Novidades/Patch Notes */}
+        <div className="news-section">
+          <h2 className="section-title">NOVIDADES / PATCH NOTES</h2>
+          <div className="carousel-container">
+            <button className="carousel-arrow left">‹</button>
+            <div className="carousel">
+              <div className="carousel-item">
+                <div className="card-image"></div>
+                <h3>PATCH 2.1 LANÇADO</h3>
+                <p>26 DE JUNHO DE 2025</p>
+              </div>
+              <div className="carousel-item">
+                <div className="card-image"></div>
+                <h3>PRÓXIMO EVENTO: "A QUEDA"</h3>
+                <p>30 DE JUNHO DE 2025</p>
+              </div>
+              <div className="carousel-item">
+                <div className="card-image"></div>
+                <h3>ENTRE NO GRUPO DO WHATSAPP</h3>
+                <p>26 DE JUNHO DE 2025</p>
+              </div>
+            </div>
+            <button className="carousel-arrow right">›</button>
+          </div>
+        </div>
+
+        {/* Seção Sobre o Jogo */}
+        <div className="about-section">
+          <h2 className="section-title">SOBRE O JOGO</h2>
+          <p className="about-description">
+            ERINIA TUORHENCE É UM MMORPG ÉPICO DE FANTASIA SOMBRIA AMBIENTADO EM UM MUNDO MEDIEVAL.
+          </p>
+          <button className="learn-more-btn">SAIBA MAIS</button>
+        </div>
+
+        {/* Cards em sequência */}
+        <div className="cards-section">
+          <div className="card">
+            <h3 className="card-title">EXPLORE O MAPA EM 3D</h3>
+            <div className="map-image"></div>
+            <button className="learn-more-btn">SAIBA MAIS</button>
+          </div>
+          
+          <div className="card">
+            <h3 className="card-title">BESTIÁRIO EM DESTAQUE</h3>
+            <div className="bestiary-image"></div>
+            <button className="learn-more-btn">SAIBA MAIS</button>
+          </div>
+        </div>
       </section>
+      
+      {/* footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <p>© Copyright 2025 - Erinia Team</p>
+        </div>
+      </footer>
     </div>
   );
 }
