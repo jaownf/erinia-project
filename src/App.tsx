@@ -77,9 +77,9 @@ export default function App() {
               enablePan={false}
               enableZoom={false}
               autoRotate
-              autoRotateSpeed={1.0}
-              minPolarAngle={Math.PI / 2.5}
-              maxPolarAngle={Math.PI - Math.PI / 2.5}
+              autoRotateSpeed={0.0}
+              minPolarAngle={Math.PI / 2.1}
+              maxPolarAngle={Math.PI - Math.PI / 0}
             />
           </Canvas>
         </div>
@@ -118,17 +118,20 @@ export default function App() {
             <div className="carousel">
               <div className="carousel-item">
                 <div className="card-image"></div>
+                <hr className="card-div-row"></hr>
                 <h3>PATCH 2.1 LANÇADO</h3>
                 <p>26 DE JUNHO DE 2025</p>
               </div>
               <div className="carousel-item">
                 <div className="card-image"></div>
+                <hr className="card-div-row"></hr>
                 <h3>PRÓXIMO EVENTO: "A QUEDA"</h3>
                 <p>30 DE JUNHO DE 2025</p>
               </div>
               <div className="carousel-item">
                 <div className="card-image"></div>
-                <h3>ENTRE NO GRUPO DO WHATSAPP</h3>
+                <hr className="card-div-row"></hr>
+                <h3>ENTRE NO GRUPO  DO WHATSAPP</h3>
                 <p>26 DE JUNHO DE 2025</p>
               </div>
             </div>
