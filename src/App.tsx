@@ -1,6 +1,6 @@
-import { Suspense, useRef, useEffect } from "react";
+import { Suspense, useRef, useEffect, useState } from "react";
 import * as THREE from "three";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 
 
@@ -76,8 +76,6 @@ export default function App() {
             <OrbitControls
               enablePan={false}
               enableZoom={false}
-              autoRotate
-              autoRotateSpeed={0.0}
               minPolarAngle={Math.PI / 2.1}
               maxPolarAngle={Math.PI - Math.PI / 0}
             />
@@ -143,7 +141,7 @@ export default function App() {
         <div className="about-section">
           <h2 className="section-title">SOBRE O JOGO</h2>
           <p className="about-description">
-            ERINIA TUORHENCE É UM MMORPG ÉPICO DE FANTASIA SOMBRIA AMBIENTADO EM UM MUNDO MEDIEVAL.
+            Erinia Tuorhence é um MMORPG épico de fantasia sombria ambientado em um mundo medieval.
           </p>
           <button className="learn-more-btn">SAIBA MAIS</button>
         </div>
@@ -167,7 +165,20 @@ export default function App() {
       {/* footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>© Copyright 2025 - Erinia Team</p>
+          <ul className="pages-ul">
+            <li className="pages-li">HOME</li>
+            <li className="pages-li">BESTIÁRIO</li>
+            <li className="pages-li">COMUNIDADE</li>
+            <li className="pages-li">LOJA</li>
+            <li className="pages-li">PERFIL</li>
+            <li className="pages-li">HISTÓRIA</li>
+          </ul>
+            <ul>
+              <div className="social"><a href="https://chat.whatsapp.com/DVz4XmcJnZq0lw7T6Fu01W"><img src="/src/assets/logo/whatsapp-logo.png" alt="whatsapp" /></a></div>
+              <div className="social"><a href="https://www.facebook.com/eriniabrasil"><img src="/src/assets/logo/facebook-logo.png" alt="facebook" /></a></div>
+              <div className="social"><a href="https://x.com/mundoerinia"><img src="/src/assets/logo/twitter-logo.png" alt="twitter" /></a></div>
+            </ul>
+              <p>© Copyright {new Date().getFullYear()} - Erinia Team </p>
         </div>
       </footer>
     </div>
