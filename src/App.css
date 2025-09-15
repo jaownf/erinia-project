@@ -4,19 +4,4 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-}
-
-nav {
-  margin-top: 20px;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
+/* Estilos de alto nível do App */

@@ -1,0 +1,112 @@
+/* Seção de Novidades (carrossel) */
+.news-section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #E6CFAF;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.carousel-arrow {
+  background: transparent;
+  border:transparent;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.3);
+}
+
+.carousel {
+  display: flex;
+  gap: 0px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.carousel-item {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #F2963A;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 330px;
+  min-height: 350px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transform: scale(0.9);
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  background: url(../assets/image/card-image.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card-div-row{
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 30px;
+  height: 1px;
+  background-color: #F2963A;
+  border: none;
+}
+
+.carousel-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 0px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: "Cinzel", serif;
+}
+
+.carousel-item p {
+  font-size: 14px;
+  color: #E6CFAF;
+  font-family: "Cinzel" , serif;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-item {
+    min-width: 100%;
+    max-width: 300px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+

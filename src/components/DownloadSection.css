@@ -1,0 +1,43 @@
+/* Seção de Download */
+.download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.download-btn {
+  background: rgba(163, 103, 20, 0.26);
+  border: 2px solid #f2963ab0;
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: rgba(163, 103, 20, 0.623);
+  transform: translateY(-2px);
+}
+
+.download-text {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+}
+
+.download-free {
+  font-size: 12px;
+  opacity: 0.9;
+  font-family: "Cinzel", serif;
+}
+
+

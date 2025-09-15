@@ -1,0 +1,65 @@
+/* Cards informativos */
+.cards-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 70px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  gap: 20px;    
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #E6CFAF;
+  font-family: "Cinzel";
+  margin: 0;
+}
+
+.map-image{
+  background: url(../assets/image/map.png) no-repeat;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #DAA520;
+  margin: 0 auto;
+}
+.bestiary-image{
+  background: url(../assets/image/bestiary.png);
+  width: 100%;
+  max-width: 650px;
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #DAA520;
+}
+
+@media (max-width: 768px) {
+  .cards-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+
