@@ -1,6 +1,6 @@
 /* Hero (landing) */
 .hero {
-  background: url("../assets/background/landing-back.png") no-repeat center center;
+  background: url("../../assets/hero/backgrounds/landing-back.png") no-repeat center center;
   background-size: 100% 100%;
   position: relative;
   height: 100vh;

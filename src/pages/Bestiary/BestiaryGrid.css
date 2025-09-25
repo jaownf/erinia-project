@@ -1,0 +1,12 @@
+/* BestiaryGrid.css */
+.bestiary-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.bestiary-grid.has-selection {
+  flex: 1;
+}

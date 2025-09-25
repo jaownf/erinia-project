@@ -1,0 +1,58 @@
+/* Bestiary.css */
+.bestiary-container {
+  padding: 100px 20px 20px 20px; /* Adiciona espaço para o header fixo */
+  color: #f0f0f0;
+  background: url(../../assets/bestiary/backgrounds/background-bestiary.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.bestiary-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd369;
+}
+
+.bestiary-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bestiary-search {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 250px;
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.bestiary-search:focus {
+  outline: 2px solid #06b6d4;
+}
+
+.bestiary-filter {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.bestiary-filter:focus {
+  outline: 2px solid #06b6d4;
+}
+
+.bestiary-content {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.bestiary-content.has-selection {
+  grid-template-columns: 2fr 1fr;
+}

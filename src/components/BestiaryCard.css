@@ -1,0 +1,51 @@
+/* BestiaryCard.css */
+.bestiary-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bestiary-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.bestiary-card img {
+  width: 100%;
+  height: 200px; /* Altura fixa para todas as imagens */
+  object-fit: cover; /* Mantém proporção e preenche o espaço */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.bestiary-card h2 {
+  color: #06b6d4;
+  font-size: 1.2rem;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border: 2px dashed #444;
+}
+
+.image-placeholder span {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.image-placeholder p {
+  font-size: 0.9rem;
+  margin: 0;
+}

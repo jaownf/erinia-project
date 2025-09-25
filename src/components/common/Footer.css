@@ -1,7 +1,5 @@
 /* Footer */
 .footer {
-  background: url(../assets/background/footer-back.png) no-repeat center center;
-  background-size: 100% 100%;
   min-height: 300px;
   padding: 40px 24px;
   color: #fff;
@@ -9,6 +7,17 @@
   z-index: 1;
   margin-top: -1px;
   text-align: center;
+}
+
+/* Footer com background padrão */
+.footer.with-background {
+  background: url(../../assets/footer/backgrounds/footer-back.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+/* Footer sem background (transparente) */
+.footer.without-background {
+  background: transparent;
 }
 
 .pages-ul {

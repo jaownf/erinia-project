@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import "./Hero.css";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import EriniaLogo3D from "./EriniaLogo3D";
-import scrollDown from "../assets/components/scroll-down.png";
+import EriniaLogo3D from "../../components/common/EriniaLogo3D";
+import scrollDown from "../../assets/hero/images/scroll-down.png";
 
 // Seção hero em tela cheia com Canvas 3D e CTA de scroll
 export default function Hero() {

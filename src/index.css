@@ -16,7 +16,7 @@ html{
 .next-section {
   min-height: 100vh;
   padding: 60px 24px;
-  background: url(./assets/background/body-back.png) no-repeat center center;
+  background: url(./assets/hero/backgrounds/body-back.png) no-repeat center center;
   background-size: 100% 100%;
   color: #fff;
   z-index: 1;

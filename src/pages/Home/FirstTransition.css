@@ -1,6 +1,6 @@
 /* Faixa de transição visual entre hero e corpo */
 .first-background-transition{
-  background: url(../assets/background/first-transition.png) no-repeat center center;
+  background: url(../../assets/hero/backgrounds/first-transition.png) no-repeat center center;
   background-size: 100% 100%;
   height: 100px;
   width: 100%;

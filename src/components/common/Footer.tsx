@@ -1,12 +1,18 @@
 import "./Footer.css";
-import whatsapp from "../assets/logo/whatsapp-logo.png";
-import facebook from "../assets/logo/facebook-logo.png";
-import twitter from "../assets/logo/twitter-logo.png";
+import whatsapp from "../../assets/footer/social/whatsapp-logo.png";
+import facebook from "../../assets/footer/social/facebook-logo.png";
+import twitter from "../../assets/footer/social/twitter-logo.png";
+
+interface FooterProps {
+  withBackground?: boolean;
+}
 
 // Rodapé com navegação secundária e redes sociais
-export default function Footer() {
+export default function Footer({ withBackground = true }: FooterProps) {
+  const footerClass = withBackground ? "footer with-background" : "footer without-background";
+  
   return (
-    <footer className="footer">
+    <footer className={footerClass}>
       <div className="footer-content">
         <ul className="pages-ul">
           <a href="#"><li className="pages-li">HOME</li></a>
