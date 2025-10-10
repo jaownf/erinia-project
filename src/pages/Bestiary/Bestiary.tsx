@@ -10,7 +10,7 @@ const Bestiary: React.FC = () => {
 
   return (
     <div className="bestiary-container">
-      <h1 className="bestiary-title">Bestiário</h1>
+      <a className="bestiary-title" href=""><h1 className="bestiary-title">Bestiário</h1></a>
       <div className="bestiary-controls">
         <input
           type="text"

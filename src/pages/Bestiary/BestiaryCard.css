@@ -1,11 +1,12 @@
 /* BestiaryCard.css */
 .bestiary-card {
-  background: #1a1a1a;
+  background: #382616;
   border-radius: 12px;
   padding: 15px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: #be7b1c 2px solid;
 }
 
 .bestiary-card:hover {
@@ -22,21 +23,22 @@
 }
 
 .bestiary-card h2 {
-  color: #06b6d4;
+  color: #FFA220;
   font-size: 1.2rem;
+  font-family: "Cinzel";
 }
 
 .image-placeholder {
   width: 100%;
   height: 200px;
-  background: #2a2a2a;
+  background: #291d11;
   border-radius: 8px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #8a8989;
   border: 2px dashed #444;
 }
 

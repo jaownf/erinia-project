@@ -6,6 +6,13 @@ interface DetailsProps {
 }
 
 const BestiaryDetails: React.FC<DetailsProps> = ({ creature }) => {
+  const colorMap: Record<string, string> = {
+    perigo: "#e63946",       // vermelho
+    fraqueza: "#ffb703",     // amarelo
+    habitat: "#457b9d",      // azul
+    comportamento: "#2a9d8f",// verde
+    status: "#6a4c93",       // roxo
+  };
   return (
     <div className="bestiary-details">
       <div className="details-image-placeholder">
@@ -17,11 +24,11 @@ const BestiaryDetails: React.FC<DetailsProps> = ({ creature }) => {
       <h3 className="details-section">Descrição:</h3>
       <p className="details-description">{creature.description}</p>
       <div className="details-info">
-        <p><strong>Perigo:</strong> {creature.perigo}</p>
-        <p><strong>Fraqueza:</strong> {creature.fraqueza}</p>
-        <p><strong>Habitat:</strong> {creature.habitat}</p>
-        <p><strong>Comportamento:</strong> {creature.comportamento}</p>
-        <p><strong>Status:</strong> {creature.status}</p>
+        <p style={{ color: colorMap.perigo }}><strong>Perigo:</strong> {creature.perigo}</p>
+        <p style={{ color: colorMap.fraqueza }}><strong>Fraqueza:</strong> {creature.fraqueza}</p>
+        <p style={{ color: colorMap.habitat }}><strong>Habitat:</strong> {creature.habitat}</p>
+        <p style={{ color: colorMap.comportamento }}><strong>Comportamento:</strong> {creature.comportamento}</p>
+        <p style={{ color: colorMap.status }}><strong>Status:</strong> {creature.status}</p>
       </div>
     </div>
   );

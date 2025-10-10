@@ -1,5 +1,5 @@
 import React from "react";
-import BestiaryCard from "../../components/BestiaryCard";
+import BestiaryCard from "./BestiaryCard";
 import "./BestiaryGrid.css";
 
 interface GridProps {

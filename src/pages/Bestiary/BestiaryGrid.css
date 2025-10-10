@@ -1,5 +1,6 @@
 /* BestiaryGrid.css */
 .bestiary-grid {
+  margin: 50px;
   flex: 2;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

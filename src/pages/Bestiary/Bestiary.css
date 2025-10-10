@@ -9,42 +9,47 @@
 }
 
 .bestiary-title {
-  font-size: 2.5rem;
+  font-family: "Cinzel";
+  font-size: 3.5rem;
   text-align: center;
   margin-bottom: 20px;
-  color: #ffd369;
+  color: #FFA220;
+  text-decoration: none;
 }
 
 .bestiary-controls {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 15px;
   margin-bottom: 20px;
+  margin-left: 60px;
 }
 
 .bestiary-search {
   padding: 10px;
   border-radius: 6px;
   border: none;
+  outline: 2px solid #be7b1c;
   width: 250px;
-  background: #1a1a1a;
+  background: #382616;
   color: #f0f0f0;
 }
 
 .bestiary-search:focus {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid #FFA220;
 }
 
 .bestiary-filter {
+  outline: 2px solid #be7b1c;
   padding: 10px;
   border-radius: 6px;
   border: none;
-  background: #1a1a1a;
+  background: #382616;
   color: #f0f0f0;
 }
 
 .bestiary-filter:focus {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid #FFA220;
 }
 
 .bestiary-content {
