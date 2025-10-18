@@ -33,12 +33,12 @@ export default function Header() {
   }, []);
 
   const accountMenuItems = [
-    { id: "profile", label: "Perfil", icon: "👤", path: "/perfil" },
-    { id: "settings", label: "Configurações", icon: "⚙️", path: "/configuracoes" },
-    { id: "customize", label: "Personalizar Perfil", icon: "🎨", path: "/personalizar" },
-    { id: "history", label: "Histórico", icon: "📊", path: "/historico" },
-    { id: "notifications", label: "Notificações", icon: "🔔", path: "/notificacoes" },
-    { id: "logout", label: "Sair", icon: "🚪", action: "logout" }
+    { id: "profile", label: "Perfil", icon: "", path: "/perfil" },
+    { id: "settings", label: "Configurações", icon: "", path: "/configuracoes" },
+    { id: "customize", label: "Personalizar Perfil", icon: "", path: "/personalizar" },
+    { id: "history", label: "Histórico", icon: "", path: "/historico" },
+    { id: "notifications", label: "Notificações", icon: "", path: "/notificacoes" },
+    { id: "logout", label: "Sair", icon: "", action: "logout" }
   ];
 
   const handleAccountClick = () => {

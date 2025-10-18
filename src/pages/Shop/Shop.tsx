@@ -368,7 +368,7 @@ const Shop: React.FC = () => {
                 onClick={() => setCurrentSlide(index)}
               />
             ))}
-            </div>
+              </div>
         </div>
       </motion.div>
 
@@ -480,8 +480,8 @@ const Shop: React.FC = () => {
             <motion.div
               key={product.id}
               className="product-card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -8 }}
               whileTap={{ scale: 0.95 }}
@@ -497,7 +497,7 @@ const Shop: React.FC = () => {
                   >
                     {getRarityLabel(product.rarity)}
                   </span>
-                </div>
+        </div>
                 <div className="card-actions">
                   <button 
                     className="action-btn wishlist"
@@ -522,9 +522,9 @@ const Shop: React.FC = () => {
                   <div className="stars">
                     {'★'.repeat(Math.floor(product.rating))}
                     {'☆'.repeat(5 - Math.floor(product.rating))}
-                  </div>
+        </div>
                   <span className="rating-text">({product.reviews})</span>
-                </div>
+    </div>
                 
                 <div className="product-price">
                   <span className="current-price">R$ {product.currentPrice.toLocaleString()}</span>
@@ -544,7 +544,7 @@ const Shop: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-        ))}
+          ))}
         </div>
       </motion.div>
 
@@ -575,7 +575,7 @@ const Shop: React.FC = () => {
               <div className="modal-content">
                 <div className="modal-image">
                   <img src={selectedProduct.image} alt={selectedProduct.name} />
-    </div>
+      </div>
                 
                 <div className="modal-info">
                   <h2>{selectedProduct.name}</h2>
@@ -595,7 +595,7 @@ const Shop: React.FC = () => {
                     {selectedProduct.discount > 0 && (
                       <span className="original-price">R$ {selectedProduct.originalPrice.toLocaleString()}</span>
                     )}
-      </div>
+        </div>
                   
                   <div className="modal-actions">
                     <button 
