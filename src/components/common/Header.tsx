@@ -139,9 +139,9 @@ export default function Header() {
               >
                 <div className="account-menu-header">
                   <div className="user-info">
-                    <div className="user-avatar">👤</div>
+                    <div className="user-avatar"></div>
                     <div className="user-details">
-                      <span className="user-name">Artemis</span>
+                      <span className="user-name">João</span>
                       <span className="user-level">Nível 15</span>
                     </div>
                   </div>

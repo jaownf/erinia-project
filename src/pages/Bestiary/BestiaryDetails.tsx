@@ -54,12 +54,12 @@ const BestiaryDetails: React.FC<BestiaryDetailsProps> = ({ creature, onClose }) 
   };
 
   const tabs = [
-    { id: 'overview', label: 'Visão Geral', icon: '👁️' },
-    { id: 'abilities', label: 'Habilidades', icon: '⚡' },
-    { id: 'weaknesses', label: 'Fraquezas', icon: '💔' },
-    { id: 'rewards', label: 'Recompensas', icon: '🎁' },
-    { id: 'lore', label: 'Lore', icon: '📜' },
-    { id: 'curiosities', label: 'Curiosidades', icon: '💡' }
+    { id: 'overview', label: 'Visão Geral', icon: '' },
+    { id: 'abilities', label: 'Habilidades', icon: '' },
+    { id: 'weaknesses', label: 'Fraquezas', icon: '' },
+    { id: 'rewards', label: 'Recompensas', icon: '' },
+    { id: 'lore', label: 'Lore', icon: '' },
+    { id: 'curiosities', label: 'Curiosidades', icon: '' }
   ];
 
   const renderTabContent = () => {

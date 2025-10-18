@@ -121,9 +121,9 @@
 /* Badges */
 .card-badges {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
+  top: 6px;
+  left: 6px;
+  right: 6px;
   display: flex;
   justify-content: space-between;
   z-index: 2;
@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 3px 6px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
