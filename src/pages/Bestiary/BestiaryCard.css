@@ -1,53 +1,440 @@
-/* BestiaryCard.css */
+/* Card do bestiário */
 .bestiary-card {
-  background: #382616;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-secondary);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: #be7b1c 2px solid;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  group: card;
 }
 
 .bestiary-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-8px);
 }
 
-.bestiary-card img {
-  width: 100%;
-  height: 200px; /* Altura fixa para todas as imagens */
-  object-fit: cover; /* Mantém proporção e preenche o espaço */
-  border-radius: 8px;
-  margin-bottom: 10px;
+/* Background Effects */
+.card-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.bestiary-card h2 {
-  color: #FFA220;
-  font-size: 1.2rem;
-  font-family: "Cinzel";
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.image-placeholder {
-  width: 100%;
+.bestiary-card:hover .card-glow {
+  opacity: 0.3;
+}
+
+.card-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bestiary-card:hover .card-pattern {
+  opacity: 1;
+}
+
+/* Image Container */
+.card-image-container {
+  position: relative;
   height: 200px;
-  background: #291d11;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.bestiary-card:hover .card-image {
+  filter: brightness(1) contrast(1.2);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bestiary-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Badges */
+.card-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.level-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.rarity-badge, .danger-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.badge-icon {
+  font-size: 12px;
+}
+
+.badge-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effect */
+.hover-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bestiary-card:hover .hover-effect {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hover-icon {
+  font-size: 24px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+  flex: 1;
+}
+
+.card-type {
+  padding: 4px 8px;
+  background: var(--accent-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.card-description {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Stats */
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #8a8989;
-  border: 2px dashed #444;
+  gap: 4px;
+  padding: 8px 4px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-secondary);
+  transition: all 0.2s ease;
 }
 
-.image-placeholder span {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.stat-item:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
 }
 
-.image-placeholder p {
-  font-size: 0.9rem;
-  margin: 0;
+.stat-icon {
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.stat-label {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-secondary);
+}
+
+.habitat-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+.habitat-icon {
+  font-size: 12px;
+}
+
+.habitat-text {
+  font-weight: 500;
+}
+
+.view-details {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-primary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.bestiary-card:hover .view-details {
+  color: var(--accent-secondary);
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.bestiary-card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .bestiary-card {
+    border-radius: 16px;
+  }
+  
+  .card-image-container {
+    height: 180px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .card-content {
+    padding: 16px;
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-description {
+    font-size: 12px;
+  }
+  
+  .card-stats {
+    gap: 6px;
+  }
+  
+  .stat-item {
+    padding: 6px 2px;
+  }
+  
+  .stat-icon {
+    font-size: 12px;
+  }
+  
+  .stat-value {
+    font-size: 11px;
+  }
+  
+  .stat-label {
+    font-size: 8px;
+  }
+  
+  .card-footer {
+    padding-top: 10px;
+  }
+  
+  .habitat-info {
+    font-size: 10px;
+  }
+  
+  .view-details {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image-container {
+    height: 160px;
+  }
+  
+  .card-content {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+  }
+  
+  .card-description {
+    font-size: 11px;
+  }
+  
+  .card-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+  
+  .stat-item {
+    padding: 4px 2px;
+  }
+  
+  .card-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
 }

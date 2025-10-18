@@ -3,10 +3,40 @@
 
 /* Estrutura base e background */
 html,body,#root { height: 100%; }
+:root {
+  --font-sans: "Poppins", "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-title: "Cinzel", serif;
+  /* Tema escuro inspirado no print */
+  --bg-0: #130e09;
+  --bg-1: #1d140d;
+  --bg-2: #2a1b11;
+  --accent: #ffa220;
+  --accent-2: #be7b1c;
+  --card: #382616;
+  --text: #f2e9e4;
+  --muted: #c9b8a8;
+  --shadow: 0 12px 40px rgba(0,0,0,.45);
+  --ring: 0 0 0 2px rgba(255,162,32,.35), 0 0 24px rgba(255,162,32,.15) inset;
+}
+
+[data-theme="light"] {
+  --bg-0: #f7f1e9;
+  --bg-1: #fbf7f1;
+  --bg-2: #efe8de;
+  --card: #ffffff;
+  --text: #1f140c;
+  --muted: #6e5642;
+  --accent: #c76b00;
+  --accent-2: #e19a3a;
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+  --ring: 0 0 0 2px rgba(199,107,0,.25), 0 0 20px rgba(199,107,0,.08) inset;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-  background: #000;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 50% -10%, rgba(255,162,32,.08), transparent), var(--bg-0);
+  transition: background-color .4s ease, color .3s ease;
 }
 html{
   scroll-behavior: smooth;
@@ -22,4 +52,17 @@ html{
   z-index: 1;
   position: relative;
   margin-top: -1px;
+}
+
+/* Utilidades globais */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
+}
+
+.ring:focus {
+  outline: none;
+  box-shadow: var(--ring);
 }
