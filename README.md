@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# Erinia — Modern Website for a Brazilian MMORPG
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and full-stack website developed for **Erinia**, a Brazilian MMORPG.  
+This project combines a refined front-end experience built with **React** and a reliable back-end powered by **Node.js**, focusing on performance, scalability, and visual consistency.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+The **Erinia Web Project** aims to deliver a professional interface for players and visitors, featuring dynamic pages, seamless animations, and integration with in-game data services.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The design philosophy follows a **clean and immersive UI**, inspired by modern gaming websites.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Core Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Responsive and modern layout using React  
+- Backend integration with Node.js and Express  
+- Modular component structure and reusable logic  
+- Dynamic pages for news, community, and shop  
+- Optimized assets and SEO-friendly setup  
+- Admin-ready architecture for content management  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## **Technology Stack**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Layer | Technologies |
+
+| **Frontend** | React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap |
+| **Backend** | Node.js, Express.js |
+| **Build Tools** | Vite, NPM |
+| **Version Control** | Git, GitHub |
+
+
+## **Building Requirements:**
+
+1. Visual Studio Code
+
+2. [Nodejs](https://nodejs.org/)
+
+3. [npm](https://www.npmjs.com/)
+
+4. [Git](https://git-scm.com/)
+
+
+## **Build Instructions:**
+
+1. Install Node.js (includes npm)
+   - Download and install from [https://nodejs.org/](https://nodejs.org/)
+   - Verify installation: `node -v` and `npm -v`
+
+2. Clone the repository:
+   - `git clone https://github.com/jaownf/erinia-test-jaownf.git`
+
+3. CD into the newly cloned directory
+   - `cd ./erinia-test-jaownf`
+
+4. Install project dependencies
+   - `npm install`
+
+5. Open the project in VS Code
+   - `code .`
+
+6. Run the project locally
+   - `npm start`
+   - The app will launch in the browser, usually at `http://localhost:3000`
+
+7. Build the project for production (optional)
+   - `npm run build`
+   - This will create a `build/` folder with the production-ready app
+  
+## **Contributing**
+
+Contributions, suggestions, and feedback are welcome. Please fork the repository and create a pull request for review.
