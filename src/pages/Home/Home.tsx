@@ -1,5 +1,4 @@
 import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
 import Hero from "./Hero";
 import FirstTransition from "./FirstTransition";
 import DownloadSection from "./DownloadSection";
@@ -19,7 +18,6 @@ export default function Home() {
         <AboutSection />
         <CardsSection />
       </section>
-      <Footer withBackground={true} />
     </>
   );
 }

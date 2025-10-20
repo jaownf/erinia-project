@@ -1,6 +1,8 @@
 /* News Section */
 .news-section {
-  padding: 40px 24px;
+  padding: 20px 24px; 
+  max-width: 1200px;   
+  margin: 0 auto;    
 }
 
 .section-title {
@@ -17,8 +19,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;      
   position: relative;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;    
+  padding: 0 20px;    
+  overflow: hidden;   
 }
 
 .carousel-arrow {
@@ -42,32 +49,42 @@
 
 .carousel {
   display: flex;
-  gap: 0px;
+  gap: 15px;         /* Reduzido gap */
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 0;
+  padding: 10px 0;   /* Reduzido padding */
+  width: 100%;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+  justify-content: center; /* Centraliza os items */
+}
+
+/* Remove a barra de rolagem para Chrome/Safari/Opera */
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel-item {
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid #F2963A;
-  border-radius: 10px;
-  padding: 20px;
-  min-width: 330px;
-  min-height: 350px;
+  border-radius: 8px;
+  padding: 10px;     /* Reduzido padding */
+  width: 200px; /* Largura fixa menor */
+  height: 220px; /* Altura fixa menor */
   text-align: center;
   backdrop-filter: blur(10px);
-  transform: scale(0.9);
+  flex: 0 0 auto; /* Previne crescimento/encolhimento */
+  transform: scale(1); /* Remova o scale */
 }
 
 .card-image {
-  width: 50%;
-  height: 50%;
+  width: 100%; /* Ajuste para 100% */
+  height: 100px;    /* Reduzido altura */
   background: url(../../assets/general/card-image.png);
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 6px;
+  margin-bottom: 8px; /* Centralize a imagem */
 }
 
 .card-div-row{
@@ -80,19 +97,18 @@
 }
 
 .carousel-item h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-left: 0px;
-  margin-right: 20px;
-  margin-bottom: 10px;
+  font-size: 14px;   /* Reduzido tamanho da fonte */
+  margin: 6px 0;
   color: #fff;
   font-family: "Cinzel", serif;
 }
 
 .carousel-item p {
-  font-size: 14px;
+  font-size: 11px;   /* Reduzido tamanho da fonte */
+  line-height: 1.2;
+  margin-top: 5px;
   color: #E6CFAF;
-  font-family: "Cinzel" , serif;
+  font-family: "Cinzel", serif;
 }
 
 @media (max-width: 768px) {
