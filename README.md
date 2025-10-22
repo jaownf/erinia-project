@@ -33,7 +33,7 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 
 ## **Building Requirements:**
 
-1. Visual Studio Code
+1. Visual Studio Code (VS Code)
 
 2. [Nodejs](https://nodejs.org/)
 
