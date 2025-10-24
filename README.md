@@ -6,7 +6,7 @@ This project combines a refined front-end experience built with **React** and a 
 
 ## Overview
 
-The **Erinia Web Project** aims to deliver a professional interface for players and visitors, featuring dynamic pages, seamless animations, and integration with in-game data services.
+The **Erinia Project** aims to deliver a professional interface for players and visitors, featuring dynamic pages, seamless animations, and integration with in-game data services.
 
 The design philosophy follows a **clean and immersive UI**, inspired by modern gaming websites.
 
