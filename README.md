@@ -17,7 +17,6 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 - Backend integration with Node.js and Express  
 - Modular component structure and reusable logic  
 - Dynamic pages for news, community, and shop  
-- Optimized assets and SEO-friendly setup  
 - Admin-ready architecture for content management  
 
 
