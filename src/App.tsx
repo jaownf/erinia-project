@@ -3,7 +3,7 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./pages/Home/Home";
 import Bestiary from "./pages/Bestiary/Bestiary";
-import Shop from "./pages/Shop/Shop";
+import History from "./pages/History/History";
 import Community from "./pages/Community/Community";
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bestiario" element={<BestiaryPage />} />
-          <Route path="/loja" element={<ShopPage />} />
+          <Route path="/historia" element={<HistoryPage />} />
           <Route path="/comunidade" element={<CommunityPage />} />
         </Routes>
         <Footer withBackground={false} />
@@ -27,8 +27,8 @@ function BestiaryPage() {
   return <Bestiary />;
 }
 
-function ShopPage() {
-  return <Shop />;
+function HistoryPage() {
+  return <History />;
 }
 
 function CommunityPage() {

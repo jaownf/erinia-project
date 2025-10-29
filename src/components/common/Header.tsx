@@ -9,8 +9,8 @@ export default function Header() {
   const menu = [
     { name: "JOGO", path: "/" },
     { name: "BESTIÁRIO", path: "/bestiario" },
-    { name: "COMUNIDADE", path: "/comunidade" },
-    { name: "LOJA", path: "/loja" }
+    { name: "HISTÓRIA", path: "/historia" },
+    { name: "COMUNIDADE", path: "/comunidade" }
   ]; 
   const [open, setOpen] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
