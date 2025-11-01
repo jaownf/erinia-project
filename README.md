@@ -16,7 +16,6 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 - Responsive and modern layout using React  
 - Modular component structure and reusable logic  
 - Dynamic pages for news and community
-- Admin-ready architecture for content management  
 
 
 ## **Technology Stack**
