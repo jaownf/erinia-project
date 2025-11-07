@@ -13,8 +13,7 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 
 ## Core Features
 
-- Responsive and modern layout using React  
-- Modular component structure and reusable logic  
+- Responsive and modern layout using React   
 - Dynamic pages for news and community
 
 
