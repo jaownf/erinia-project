@@ -13,8 +13,8 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 
 ## Core Features
 
-- Responsive and modern layout using React   
-- Dynamic pages for news and community
+- Responsive and modern layout using React.
+- Dynamic pages for news and community.
 
 
 ## **Technology Stack**
