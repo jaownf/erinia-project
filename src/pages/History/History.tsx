@@ -38,6 +38,7 @@ const timelineEvents = [
     description: 'Erinia é lançado oficialmente, trazendo uma experiência única que une tradição e inovação em um RPG genuinamente brasileiro.',
     icon: '🚀'
   }
+  
 ];
 
 export default function History() {
@@ -61,11 +62,6 @@ export default function History() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <img 
-              src="/src/assets/logo/erinia-logo.png" 
-              alt="Erinia Logo" 
-              className="hero-logo"
-            />
           </motion.div>
           <h1 className="history-title">A História de Erinia</h1>
           <p className="history-subtitle">

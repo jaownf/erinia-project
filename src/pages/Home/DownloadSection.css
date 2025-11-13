@@ -1,3 +1,6 @@
+*{
+  text-decoration: none;
+}
 /* Seção de Download */
 .download-section {
   display: flex;
