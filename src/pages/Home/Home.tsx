@@ -17,7 +17,6 @@ export default function Home() {
         <AboutSection />
         <CardsSection />
       </section>
-      <LastTransition />
     </>
   );
 }
