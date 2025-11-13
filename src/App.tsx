@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/historia" element={<HistoryPage />} />
           <Route path="/comunidade" element={<CommunityPage />} />
         </Routes>
-        <Footer withBackground={false} />
+        <Footer withBackground={true} />
       </div>
     </Router>
   );
@@ -34,3 +34,4 @@ function HistoryPage() {
 function CommunityPage() {
   return <Community />;
 }
+

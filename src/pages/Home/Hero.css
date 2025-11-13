@@ -1,6 +1,8 @@
 /* Hero (landing) */
 .hero {
-  background: url("../../assets/hero/backgrounds/landing-back.png") no-repeat center center;
+   background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../assets/hero/backgrounds/landing-back.png") no-repeat center center;
   background-size: 100% 100%;
   position: relative;
   height: 100vh;
@@ -8,6 +10,7 @@
   display: block;
   z-index: 5;
   overflow: hidden;
+  
 }
 
 /* Canvas na hero */
@@ -18,14 +21,13 @@
 }
 
 /* Título sobre o canvas */
-.title-box {
+.download-box {
   position: absolute;
   left: 50%;
-  top: 72%;
+  top: 75%;
   transform: translate(-50%, -50%);
   z-index: 10;
   text-align: center;
-  pointer-events: none;
 }
 .title-box h1 {
   font-weight: 700;

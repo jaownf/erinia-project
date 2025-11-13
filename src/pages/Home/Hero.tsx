@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import "./Hero.css";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import EriniaLogo3D from "../../components/common/EriniaLogo3D";
+import EriniaLogo3D from "../../components/EriniaLogo3D";
 import scrollDown from "../../assets/hero/images/scroll-down.png";
-
+import DownloadSection from "./DownloadSection";
 // Seção hero em tela cheia com Canvas 3D e CTA de scroll
 export default function Hero() {
   const onScrollDown = () => {
@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-canvas">
-        <Canvas camera={{ position: [2, -20, 18], fov: 30 }} shadows>
+        <Canvas camera={{ position: [1, 22, 0], fov: 30 }} shadows>
           <ambientLight intensity={0.8} />
           <directionalLight position={[5, 5, 5]} intensity={1.2} />
           <Suspense fallback={null}>
@@ -23,6 +23,8 @@ export default function Hero() {
             <Environment preset="dawn" />
           </Suspense>
           <OrbitControls
+            autoRotate={true}
+            autoRotateSpeed={1.0}
             enablePan={false}
             enableZoom={false}
             minPolarAngle={Math.PI / 2.1}
@@ -30,9 +32,8 @@ export default function Hero() {
           />
         </Canvas>
       </div>
-
-      <div className="title-box">
-        <p className="subtitle">UMA HISTÓRIA DE SUPERAÇÃO, ERINIA.</p>
+      <div className="download-box">
+        <DownloadSection />
       </div>
 
       <button onClick={onScrollDown} className="scroll-indicator" aria-label="Scroll down">

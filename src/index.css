@@ -46,9 +46,9 @@ html{
 .next-section {
   min-height: 100vh;
   padding: 60px 24px;
-  background: url(./assets/hero/backgrounds/body-back.png) no-repeat center center;
+  background:linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.8)), url(./assets/hero/backgrounds/body-back.png)  center center;
   background-size: 100% 100%;
-  color: #fff;
+  color: #474747;
   z-index: 1;
   position: relative;
   margin-top: -1px;

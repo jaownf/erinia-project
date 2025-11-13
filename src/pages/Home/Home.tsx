@@ -1,10 +1,10 @@
 import Header from "../../components/common/Header";
 import Hero from "./Hero";
 import FirstTransition from "./FirstTransition";
-import DownloadSection from "./DownloadSection";
 import NewsSection from "./NewsSection";
 import AboutSection from "./AboutSection";
 import CardsSection from "./CardsSection";
+import LastTransition from "./LastTransition";
 
 export default function Home() {
   return (
@@ -13,11 +13,11 @@ export default function Home() {
       <Hero />
       <FirstTransition />
       <section id="next-section" className="next-section">
-        <DownloadSection />
         <NewsSection />
         <AboutSection />
         <CardsSection />
       </section>
+      <LastTransition />
     </>
   );
 }
