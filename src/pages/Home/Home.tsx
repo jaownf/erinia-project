@@ -4,7 +4,6 @@ import FirstTransition from "./FirstTransition";
 import NewsSection from "./NewsSection";
 import AboutSection from "./AboutSection";
 import CardsSection from "./CardsSection";
-import LastTransition from "./LastTransition";
 
 export default function Home() {
   return (

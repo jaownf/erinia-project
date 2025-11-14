@@ -10,7 +10,7 @@ export default function Header() {
     { name: "JOGO", path: "/" },
     { name: "BESTIÁRIO", path: "/bestiario" },
     { name: "HISTÓRIA", path: "/historia" },
-    { name: "COMUNIDADE", path: "/comunidade" },
+    { name: "CADASTRO", path: "/comunidade" },
   ]; 
   const [open, setOpen] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
@@ -97,76 +97,13 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* CONTA À DIREITA */}
-      <div className="account-container" ref={accountMenuRef}>
-        <motion.button
-          className="account-btn"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          onClick={handleAccountClick}
-        >
-          CONTA
-          <span className="account-arrow">▼</span>
-        </motion.button>
-
-        <AnimatePresence>
-          {showAccountMenu && (
-            <motion.div
-              className="account-menu"
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-            >
-              <div className="account-menu-header">
-                <div className="user-info">
-                  <div className="user-avatar"></div>
-                  <div className="user-details">
-                    <span className="user-name">Lorena</span>
-                    <span className="user-level">Nível 15</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="account-menu-items">
-                {accountMenuItems.map((item, index) => (
-                  <motion.button
-                    key={item.id}
-                    className={`menu-item ${
-                      item.action === "logout" ? "logout-item" : ""
-                    }`}
-                    onClick={() => handleMenuItemClick(item)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05, duration: 0.2 }}
-                    whileHover={{ x: 4 }}
-                  >
-                    <span className="menu-icon">{item.icon}</span>
-                    <span className="menu-label">{item.label}</span>
-                    {item.path && <span className="menu-arrow">→</span>}
-                  </motion.button>
-                ))}
-              </div>
-
-              <div className="account-menu-footer">
-                <div className="user-stats">
-                  <div className="stat">
-                    <span className="stat-value">42</span>
-                    <span className="stat-label">Posts</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-value">156</span>
-                    <span className="stat-label">Comentários</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-value">892</span>
-                    <span className="stat-label">Curtidas</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+      {/* SERVER STATUS */}
+      <div className="server-status-container">
+        <span className="server-status-text">STATUS SERVER:</span>
+        <div className="status-indicator">
+          <span className="status-dot online"></span>
+          <span className="status-text">ONLINE</span>
+        </div>
       </div>
 
       {/* MENU MOBILE (abre sobre tudo) */}
