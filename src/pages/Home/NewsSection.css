@@ -6,15 +6,16 @@
 }
 
 .section-title {
-  font-size: 48px;
+  font-size: 58px;
   font-weight: 700;
   font-family: "Cinzel", serif;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-bottom: -50px;
-  color: #bd7c21;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  color: #ca7e13;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.8);
   letter-spacing: 2px;
+
 }
 
 .carousel-container {
@@ -40,27 +41,27 @@
 }
 
 .carousel-arrow {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.9), rgba(247, 147, 30, 0.9));
+  background: linear-gradient(135deg, rgba(255, 175, 1, 0.9), rgba(255, 154, 2, 0.9));
   border: 2px solid rgba(255, 255, 255, 0.3);
   color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 32px;
+  font-size: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 15px rgba(253, 165, 0, 0.4);
   flex-shrink: 0;
   z-index: 10;
 }
 
 .carousel-arrow:hover {
-  transform: scale(1.15);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
-  background: linear-gradient(135deg, rgba(255, 107, 53, 1), rgba(247, 147, 30, 1));
+  transform: scale(1.09);
+  box-shadow: 0 6px 20px rgba(255, 187, 0, 0.6);
+  background: linear-gradient(135deg, rgb(253, 173, 0), rgba(247, 147, 30, 1));
 }
 
 .carousel-arrow:active {
@@ -80,7 +81,7 @@
 
 .news-card {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 20, 20, 0.85) 100%);
-  border: 2px solid #F2963A;
+  border: 2px solid #cc9c00;
   border-radius: 20px;
   padding: 0;
   backdrop-filter: blur(15px);
@@ -90,8 +91,8 @@
 }
 
 .news-card:hover {
-  border-color: #ff6b35;
-  box-shadow: 0 15px 50px rgba(255, 107, 53, 0.3);
+  border-color: #ebba19;
+  box-shadow: 0 15px 50px rgba(255, 174, 0, 0.3);
 }
 
 .news-card-header {
@@ -99,12 +100,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(247, 147, 30, 0.15));
-  border-bottom: 1px solid rgba(242, 150, 58, 0.3);
+  background: linear-gradient(135deg, rgba(241, 145, 0, 0.15), rgba(255, 188, 42, 0.15));
+  border-bottom: 1px solid rgba(248, 170, 2, 0.3);
 }
 
 .news-category {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  background: linear-gradient(135deg, #ebba19, #df9220);
   color: white;
   padding: 6px 16px;
   border-radius: 20px;
@@ -125,7 +126,7 @@
 .card-image {
   width: 100%;
   height: 200px;
-  background: url(../../assets/general/card-image.png);
+  background: url(../../assets/general/card-image.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 0;
@@ -158,7 +159,8 @@
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: -50px;
+  margin-bottom: 80px;
 }
 
 .carousel-dot {
@@ -178,8 +180,8 @@
 }
 
 .carousel-dot.active {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  border-color: #ff6b35;
+  background: linear-gradient(135deg, #ffb938, #f7931e);
+  border-color: #ff9900;
   width: 32px;
   border-radius: 6px;
 }

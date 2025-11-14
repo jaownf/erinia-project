@@ -9,6 +9,7 @@ import Community from "./pages/Community/Community";
 export default function App() {
   return (
     <Router>
+      <div className="site-wrapper">
       <div className="app-root">
         <Header />
         <Routes>
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/historia" element={<HistoryPage />} />
           <Route path="/comunidade" element={<CommunityPage />} />
         </Routes>
+        </div>
         <Footer withBackground={true} />
       </div>
     </Router>

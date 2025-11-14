@@ -3,5 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.site-wrapper{
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
 /* Estilos de alto nível do App */

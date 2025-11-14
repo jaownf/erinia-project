@@ -8,7 +8,7 @@ export default function DownloadSection() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="download-btn">
+         <button className="download-btn">
           <span className="download-text">BAIXAR O JOGO</span>
           <span className="download-free">GRÁTIS • WINDOWS</span>
         </button>

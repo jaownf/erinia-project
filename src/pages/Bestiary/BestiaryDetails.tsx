@@ -55,9 +55,6 @@ const BestiaryDetails: React.FC<BestiaryDetailsProps> = ({ creature, onClose }) 
 
   const tabs = [
     { id: 'overview', label: 'Visão Geral', icon: '' },
-    { id: 'abilities', label: 'Habilidades', icon: '' },
-    { id: 'weaknesses', label: 'Fraquezas', icon: '' },
-    { id: 'rewards', label: 'Recompensas', icon: '' },
     { id: 'lore', label: 'Lore', icon: '' },
     { id: 'curiosities', label: 'Curiosidades', icon: '' }
   ];
@@ -97,84 +94,7 @@ const BestiaryDetails: React.FC<BestiaryDetailsProps> = ({ creature, onClose }) 
           </div>
         );
       
-      case 'abilities':
-        return (
-          <div className="tab-content-section">
-            <div className="abilities-grid">
-              {creature.abilities.map((ability, index) => (
-                <motion.div 
-                  key={index} 
-                  className="ability-card"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <div className="ability-icon">⚡</div>
-                  <div className="ability-content">
-                    <h4>{ability}</h4>
-                    <p>Habilidade especial desta criatura</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        );
       
-      case 'weaknesses':
-        return (
-          <div className="tab-content-section">
-            <div className="weaknesses-grid">
-              {creature.weaknesses.map((weakness, index) => (
-                <motion.div 
-                  key={index} 
-                  className="weakness-card"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <div className="weakness-icon">💔</div>
-                  <div className="weakness-content">
-                    <h4>{weakness}</h4>
-                    <p>Fraqueza conhecida desta criatura</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        );
-      
-      case 'rewards':
-        return (
-          <div className="tab-content-section">
-            <div className="rewards-grid">
-              <div className="reward-card xp">
-                <div className="reward-icon">⭐</div>
-                <div className="reward-content">
-                  <h4>Experiência</h4>
-                  <div className="reward-value">{creature.rewards.xp} XP</div>
-                </div>
-              </div>
-              <div className="reward-card gold">
-                <div className="reward-icon">💰</div>
-                <div className="reward-content">
-                  <h4>Ouro</h4>
-                  <div className="reward-value">{creature.rewards.gold} G</div>
-                </div>
-              </div>
-              <div className="reward-card items">
-                <div className="reward-icon">🎁</div>
-                <div className="reward-content">
-                  <h4>Itens</h4>
-                  <div className="reward-items">
-                    {creature.rewards.items.map((item, index) => (
-                      <span key={index} className="reward-item">{item}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
       
       case 'lore':
         return (

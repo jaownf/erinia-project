@@ -1,69 +1,94 @@
 /* Cards Section */
 .cards-section {
-  padding: 40px 24px;
+  padding: 80px 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
+  grid-template-columns: 0.8fr 1.2fr; /* mapa maior agora */
+  gap: 50px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
+/* Card container */
 .card {
-  border-radius: 12px;
-  padding: 40px;
+  border-radius: 20px;
+  padding: 45px 30px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid #DAA520;
-  gap: 20px;    
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid #cc9c00;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  gap: 20px;
+  position: relative;
+  transition: 0.3s ease;
 }
 
+/* Ajuste EXCLUSIVO no card de Bestiário */
+.card:first-child {
+  gap: 10px;          /* reduz espaçamento interno */
+  padding-top: 25px;  /* reduz o padding superior */
+}
+
+/* Título */
 .card-title {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 20px;
-  color: #E6CFAF;
-  font-family: "Cinzel";
   margin: 0;
+  color: #f0d7a3;
+  font-family: "Cinzel", serif;
+  letter-spacing: 1px;
+  text-shadow: 2px 3px 8px rgba(0,0,0,0.7);
 }
 
+/* Linha decorativa */
+.card-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #e8c472, #d19822, #e8c472);
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* Bestiary */
+.bestiary-image{
+  background: url(../../assets/general/bestiary.png) no-repeat;
+  width: 100%;
+  max-width: 350px;
+  height: 260px;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+}
+
+/* Map */
 .map-image{
   background: url(../../assets/general/map.png) no-repeat;
   width: 100%;
-  max-width: 400px;
-  height: 400px;
+  max-width: 520px;   /* ficou maior */
+  height: 430px;
   background-position: center;
   background-size: cover;
-  border: 1px solid #DAA520;
-  border-radius: 8px;
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
 }
 
-.bestiary-image{
-  background: url(../../assets/general/bestiary.png);
-  width: 100%;
-  max-width: 400px;
-  height: 300px;
-  background-position: center;
-  background-size: cover;
-  border: 1px solid #DAA520;
-  border-radius: 8px;
-}
-
-@media (max-width: 768px) {
+/* Responsivo */
+@media (max-width: 900px) {
   .cards-section {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
   }
-  
+
   .map-image,
   .bestiary-image {
     max-width: 100%;
-    height: 250px;
+    height: 260px;
   }
 }
-
-

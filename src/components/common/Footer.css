@@ -4,15 +4,31 @@
   padding: 40px 24px;
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 50;
   margin-top: -1px;
   text-align: center;
+  background-color: transparent;
+  padding-top: 150px;
 }
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -260px;   /* altura que a grama sobe */
+  left: 0;
+  right: 0;
+  height: 220px;
 
-/* Footer com background padrão */
+  background-image: url("/src/assets/footer/grama.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  pointer-events: none; /* importante para não atrapalhar cliques */
+  z-index: -1;
+}
 .footer.with-background {
   background: url(../../assets/footer/backgrounds/footer-back.png) no-repeat center center;
-  background-size: 100% 100%;
+  background-size:100% 100%;
 }
 
 /* Footer sem background (transparente) */

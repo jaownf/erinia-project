@@ -134,6 +134,7 @@
 }
 
 .bestiary-title {
+  font-family: 'Cinzel';
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   margin-bottom: 20px;
@@ -198,7 +199,7 @@
   border: 2px solid var(--border-primary);
   background: var(--bg-glass);
   color: var(--text-primary);
-  font-size: 20px;
+  font-size: 17px;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(20px);
@@ -246,7 +247,7 @@
   width: 100%;
   padding: 18px 60px 18px 20px;
   border: 2px solid var(--border-primary);
-  border-radius: 50px;
+  border-radius: 10px;
   background: var(--bg-glass);
   color: var(--text-primary);
   font-size: 16px;
