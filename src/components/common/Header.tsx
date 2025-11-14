@@ -59,15 +59,10 @@ export default function Header() {
  return (
   <motion.header
     className="site-header"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
+
   >
     <motion.div
       className="header-inner"
-      initial={{ scale: 0.95, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
     >
       {/* LOGO À ESQUERDA */}
       <Link to="/" className="logo-link">

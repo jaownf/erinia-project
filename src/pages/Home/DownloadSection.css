@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .download-btn {
@@ -43,8 +43,8 @@
 }
 
 .download-text {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 1200;
   margin-top: 5px;
   font-family: 'Cinzel';
 }
