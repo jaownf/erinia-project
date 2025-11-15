@@ -56,10 +56,7 @@ const BestiaryCard: React.FC<BestiaryCardProps> = ({ creature, onClick, index = 
           <span className="level-text">Nv. {creature.level}</span>
         </div>
 
-        {/* Hover Effect */}
-        <div className="hover-effect">
-          <div className="hover-icon">👁</div>
-        </div>
+     
       </div>
       
       {/* Card Content */}

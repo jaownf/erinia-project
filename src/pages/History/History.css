@@ -82,7 +82,7 @@
   font-weight: 800;
   font-family: 'Cinzel', serif;
   margin-bottom: 30px;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+  background: linear-gradient(135deg, #f7931e 0%, #ffa600 50%, #f7931e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -343,7 +343,8 @@
 }
 
 .gallery-item {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+  background-image: url(/src/assets/general/card-image.jpg);
+  background-position: right;
   border: 2px solid #F2963A;
   border-radius: 24px;
   padding: 0;
@@ -387,7 +388,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
   overflow: hidden;
   position: relative;
 }

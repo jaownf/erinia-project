@@ -27,7 +27,7 @@
   --shadow-glow: 0 0 20px var(--accent-glow);
   
   /* Gradientes */
-  --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  --gradient-primary: linear-gradient(135deg, #f7931e 0%, #ffbd09 100%);
   --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);

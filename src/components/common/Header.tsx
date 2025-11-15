@@ -13,38 +13,12 @@ export default function Header() {
     { name: "CADASTRO", path: "/comunidade" },
   ]; 
   const [open, setOpen] = useState(false);
-  const [showAccountMenu, setShowAccountMenu] = useState(false);
-  const accountMenuRef = useRef<HTMLDivElement>(null);
 
+  
   useEffect(() => {
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target as Node)) {
-        setShowAccountMenu(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const accountMenuItems = [
-    { id: "profile", label: "Perfil", icon: "", path: "/perfil" },
-    { id: "settings", label: "Configurações", icon: "", path: "/configuracoes" },
-    { id: "customize", label: "Personalizar Perfil", icon: "", path: "/personalizar" },
-    { id: "history", label: "Histórico", icon: "", path: "/historico" },
-    { id: "notifications", label: "Notificações", icon: "", path: "/notificacoes" },
-    { id: "logout", label: "Sair", icon: "", action: "logout" }
-  ];
-
-  const handleAccountClick = () => {
-    setShowAccountMenu(!showAccountMenu);
-  };
-
+  
   const handleMenuItemClick = (item: any) => {
     if (item.action === "logout") {
       // Lógica de logout
@@ -53,8 +27,7 @@ export default function Header() {
       // Navegação para outras páginas
       console.log("Navigate to:", item.path);
     }
-    setShowAccountMenu(false);
-  };
+  }
 
  return (
   <motion.header

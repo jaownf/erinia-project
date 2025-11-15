@@ -794,8 +794,8 @@ const mockCreatures: Creature[] = [
   },
   {
     id: 22,
-    name: 'Mega Crioulo',
-    image: '/src/assets/bestiary/grid-images/mega crioulo(canhambora chefe).png',
+    name: 'Canhambora Chefe',
+    image: '/src/assets/bestiary/grid-images/canhambora chefe.png',
     type: 'Criatura Bestial',
     rarity: 'rare',
     danger: 'high',
