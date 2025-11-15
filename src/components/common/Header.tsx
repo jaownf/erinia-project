@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Header.css";
@@ -10,24 +10,9 @@ export default function Header() {
     { name: "JOGO", path: "/" },
     { name: "BESTIÁRIO", path: "/bestiario" },
     { name: "HISTÓRIA", path: "/historia" },
-    { name: "CADASTRO", path: "/comunidade" },
+    { name: "CADASTRO", path: "/login" },
   ]; 
   const [open, setOpen] = useState(false);
-
-  
-  useEffect(() => {
-  }, []);
-
-  
-  const handleMenuItemClick = (item: any) => {
-    if (item.action === "logout") {
-      // Lógica de logout
-      console.log("Logout");
-    } else {
-      // Navegação para outras páginas
-      console.log("Navigate to:", item.path);
-    }
-  }
 
  return (
   <motion.header

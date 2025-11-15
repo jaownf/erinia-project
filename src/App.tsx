@@ -5,6 +5,8 @@ import Home from "./pages/Home/Home";
 import Bestiary from "./pages/Bestiary/Bestiary";
 import History from "./pages/History/History";
 import Community from "./pages/Community/Community";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
           <Route path="/bestiario" element={<BestiaryPage />} />
           <Route path="/historia" element={<HistoryPage />} />
           <Route path="/comunidade" element={<CommunityPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         </div>
         <Footer withBackground={true} />
