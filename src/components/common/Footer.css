@@ -1,0 +1,91 @@
+/* Footer */
+.footer {
+  min-height: 300px;
+  padding: 40px 24px;
+  color: #fff;
+  position: relative;
+  z-index: 50;
+  margin-top: -50px;
+  text-align: center;
+  background-color: transparent;
+  padding-top: 150px;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -260px;   /* altura que a grama sobe */
+  left: 0;
+  right: 0;
+  height: 220px;
+
+  background-image: url("/src/assets/footer/grama.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  pointer-events: none; /* importante para não atrapalhar cliques */
+  z-index: -1;
+}
+.footer.with-background {
+  background: url(../../assets/footer/backgrounds/footer-back.png) no-repeat center center;
+  background-size:100% 100%;
+}
+
+/* Footer sem background (transparente) */
+.footer.without-background {
+  background: transparent;
+}
+
+.pages-ul {
+  list-style: none;
+  margin-top: 70px;
+  display: inline-block;
+  padding: 0;
+}
+.pages-li {
+  display: inline-block;
+  margin: 0 15px;
+  color:#e0e0e0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: transparent;
+  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease, background 0.25s ease;
+  transform: translateY(0);
+  text-shadow: none;
+}
+.pages-li:hover{
+  color: #ffffff;
+  background: transparent;
+  transform: translateY(-4px) scale(1.02);
+  text-shadow: 0 6px 12px rgba(255, 255, 255, 0.35);
+}
+.social{
+  display: inline-block;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: transparent;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  transform: translateY(0);
+}
+.social img {
+  width: 34px;
+  height: auto;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.social:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: transparent;
+  filter: drop-shadow(0 6px 10px rgba(255, 255, 255, 0.35));
+}
+
+.social:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+}
+.footer p{
+  font-size: 14px;
+}
+
+

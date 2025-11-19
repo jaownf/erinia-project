@@ -1,0 +1,16 @@
+/* Faixa de transição visual entre hero e corpo */
+.last-background-transition{
+  background-color: transparent;
+  height: 0;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.last-transition {
+  filter: brightness(80%);
+  width: 100%;
+  height: 155px;
+  display: block;
+  position: relative;
+  z-index: 10;
+}

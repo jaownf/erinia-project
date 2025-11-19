@@ -1,0 +1,416 @@
+/* Card do bestiário */
+.bestiary-card {
+  background-image: url('/src/assets/general/card-image.png');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 28px;
+  padding: 28px 24px 24px;
+  position: relative;
+  width: 320px;
+  flex: 0 0 auto;
+  min-height: 460px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bestiary-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.bestiary-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.45);
+}
+
+.card-bg-effects {
+  display: none;
+}
+
+.card-image-container {
+  position: relative;
+  flex: 1;
+  min-height: 230px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 10px;
+  transform: translateY(28px);
+}
+
+.card-image {
+  width: 90%;
+  max-height: 240px;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.45));
+  
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  color: #2b1a0b;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 18px;
+}
+
+.card-header,
+.card-description,
+.card-footer {
+  position: static;
+  z-index: 1;
+}
+
+.card-title,
+.card-description,
+.card-type {
+  color: #2b1a0b;
+  text-shadow: none;
+}
+
+.card-description {
+  color: rgba(43, 26, 11, 0.95);
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.image-overlay,
+.overlay-gradient {
+  display: none;
+}
+
+/* Badges */
+.card-badges {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.level-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f4d7a4;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bestiary-card:hover .level-badge {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(5, 4, 4, 0.4);
+}
+
+.rarity-badge,
+.danger-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;                /* menos espaço interno entre ícone/texto */
+  padding: 2px 6px;        /* padding menor */
+  border-radius: 999px;
+  font-size: 10px;         /* fonte menor e legível */
+  font-weight: 700;
+  line-height: 1;
+  max-width: 72px;         /* limite ainda menor para evitar esticar */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12); /* sombra mais sutil */
+  text-transform: uppercase;
+}
+
+/* Hover Effect */
+.hover-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(0,0,0,0.55); /* círculo escuro e sutil */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bestiary-card:hover .hover-effect {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.hover-icon {
+  font-size: 18px; /* menor e menos intrusivo */
+  color: var(--accent-primary);
+}
+
+/* Card Content */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-title {
+  margin-left: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #2b1a0b;
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+  flex: 1;
+  letter-spacing: -0.3px;
+}
+
+.card-type {
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f4d7a4;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(3, 3, 2, 0.25);
+  transition: all 0.3s ease;
+}
+
+.bestiary-card:hover .card-type {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(7, 6, 5, 0.35);
+}
+
+
+.card-description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Stats */
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-secondary);
+  transition: all 0.2s ease;
+  font-size: 11px;
+}
+
+.stat-item:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.stat-label {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.view-details {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f4d7a4;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  transform: translateY(-5px);
+}
+
+.bestiary-card:hover .view-details {
+  color: #f4d7a4;
+  background:rgba(0, 0, 0, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+}
+
+.bestiary-card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .bestiary-card {
+    border-radius: 16px;
+  }
+  
+  .card-image-container {
+    height: 180px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .card-content {
+    padding: 16px;
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-description {
+    font-size: 12px;
+  }
+  
+  .card-stats {
+    gap: 6px;
+  }
+  
+  .stat-item {
+    padding: 6px 2px;
+  }
+  
+  .stat-icon {
+    font-size: 12px;
+  }
+  
+  .stat-value {
+    font-size: 11px;
+  }
+  
+  .stat-label {
+    font-size: 8px;
+  }
+  
+  .card-footer {
+    padding-top: 10px;
+  }
+  
+  .habitat-info {
+    font-size: 10px;
+  }
+  
+  .view-details {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image-container {
+    height: 160px;
+  }
+  
+  .card-content {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+  }
+  
+  .card-description {
+    font-size: 11px;
+  }
+  
+  .card-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+  
+  .stat-item {
+    padding: 4px 2px;
+  }
+  
+  .card-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .bestiary-card {
+    width: 100%;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .rarity-badge,
+  .danger-badge,
+  .level-badge {
+    font-size: 9px;
+    padding: 2px 5px;
+    max-width: 64px;
+  }
+}

@@ -1,0 +1,58 @@
+*{
+  text-decoration: none;
+}
+/* Seção de Download */
+.download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.download-btn {
+  width: 280px;              
+  aspect-ratio: 350 / 130;             
+  background-image: url("/src/assets/hero/images/download-button.jpg");
+  background-size: cover;  
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: none;         
+  outline: none;
+
+  opacity: 0.85;
+
+  color: #fff;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* texto sempre centralizado */
+  align-items: center;
+
+  font-family: "Cinzel", serif;
+  gap: 5px;
+  transition: transform 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.15);
+  opacity: 1;
+}
+
+.download-text {
+  font-size: 22px;
+  font-weight: 1200;
+  margin-top: 5px;
+  font-family: 'Cinzel';
+}
+
+.download-free {
+  font-size: 13px;
+  opacity: 0.9;
+  font-family: "Cinzel", serif;
+}
+
+

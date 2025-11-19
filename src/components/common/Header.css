@@ -1,0 +1,373 @@
+/* Header principal */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 12px 0;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 54px;
+  position: relative;
+}
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  flex: 1;
+  max-width: 500px;
+  margin-left: 100px;
+}
+/* Logo */
+.logo-link {
+  flex-shrink: 0;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  height: 65px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+  margin-left: -30px;
+
+}
+
+.logo-link:hover .logo {
+  filter: drop-shadow(0 4px 12px rgba(255, 162, 32, 0.3));
+}
+
+/* Navegação desktop */
+.desktop-nav {
+  display:flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5 40px 0 280px;
+  flex: 1;
+  position: relative;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background: rgba(255, 162, 32, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 0px 12px rgba(255, 162, 32, 0.1);
+   border-radius: 30px;
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background: rgba(255, 162, 32, 0.08);
+  border-radius: 30px;
+  box-shadow: 0 0px 12px rgba(255, 162, 32, 0.15);
+}
+
+/* Botão de conta */
+.account-container {
+  flex-shrink: 0;
+}
+
+.account-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.06) 0%, 
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 36px;
+}
+
+.account-btn:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 162, 32, 0.1) 0%, 
+    rgba(255, 162, 32, 0.05) 100%
+  );
+  border-color: rgba(255, 162, 32, 0.3);
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 162, 32, 0.15);
+}
+
+.account-arrow {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.account-container:hover .account-arrow {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+/* STATUS DO SERVIDOR */
+.server-status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.server-status-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Agrupa bolinha + texto */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Bolinha do status */
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ONLINE = verde */
+.status-dot.online {
+  background-color: #00ff85;
+  box-shadow: 0 0 8px #00ff85;
+  animation: pulseOnline 1.4s infinite ease-in-out;
+}
+
+.status-text.online {
+  color: #00ff85;
+  font-weight: 700;
+  text-shadow: 0 0 6px #00ff85;
+}
+
+/* Animação da bolinha */
+@keyframes pulseOnline {
+  0% { transform: scale(1); box-shadow: 0 0 6px #00ff85; }
+  50% { transform: scale(1.35); box-shadow: 0 0 12px #00ff85; }
+  100% { transform: scale(1); box-shadow: 0 0 6px #00ff85; }
+}
+
+/* Menu hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger:hover {
+  background: rgba(255, 162, 32, 0.1);
+  border-color: rgba(255, 162, 32, 0.3);
+}
+
+.hamburger span {
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: var(--accent);
+}
+
+/* Responsividade */
+@media (max-width: 860px) {
+  .header-inner {
+    padding: 0 16px;
+    height: 52px;
+  }
+  
+  .logo {
+    height: 36px;
+  }
+  
+  .desktop-nav {
+    display: none;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .account-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    min-height: 32px;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .account-menu {
+    width: 280px;
+    right: -10px;
+  }
+  
+  .account-menu-header {
+    padding: 16px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .user-name {
+    font-size: 14px;
+  }
+  
+  .user-level {
+    font-size: 11px;
+  }
+  
+  .menu-item {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  
+  .account-menu-footer {
+    padding: 12px 16px;
+  }
+  
+  .user-stats {
+    gap: 12px;
+  }
+  
+  .stat-value {
+    font-size: 14px;
+  }
+  
+  .stat-label {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 8px 0;
+  }
+  
+  .header-inner {
+    padding: 0 12px;
+    height: 48px;
+  }
+  
+  .logo {
+    height: 32px;
+  }
+  
+  .account-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+    min-height: 28px;
+  }
+  
+  .account-menu {
+    width: 260px;
+    right: -15px;
+  }
+  
+  .account-menu-header {
+    padding: 12px;
+  }
+  
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .user-name {
+    font-size: 13px;
+  }
+  
+  .user-level {
+    font-size: 10px;
+  }
+  
+  .menu-item {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  
+  .account-menu-footer {
+    padding: 10px 12px;
+  }
+  
+  .user-stats {
+    gap: 8px;
+  }
+  
+  .stat-value {
+    font-size: 12px;
+  }
+  
+  .stat-label {
+    font-size: 8px;
+  }
+}
