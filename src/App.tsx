@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./pages/Home/Home";
@@ -8,9 +9,21 @@ import Community from "./pages/Community/Community";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 
+// Componente para rolar para o topo quando a rota mudar
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="site-wrapper">
       <div className="app-root">
         <Header />
