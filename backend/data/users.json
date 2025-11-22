@@ -1,0 +1,28 @@
+[
+  {
+    "fullName": "teste123",
+    "email": "teste123@gmail.com",
+    "whatsapp": "",
+    "username": "teste123123",
+    "passwordHash": "$2b$12$eF83wVpp3ZssBmqrQdzlTuMikD.TmASHzGzScW/x7.MeRnTUxJBMW",
+    "createdAt": "2025-11-22T02:16:34.010Z",
+    "accountStatus": "Active"
+  },
+  {
+    "id": "3176f719-c25d-44be-9a59-d5b0d8abde5a",
+    "name": "teste1515",
+    "email": "teste15@gmail.com",
+    "username": "teste1515",
+    "passwordHash": "$2b$12$MCOLZDrEKMBNkaDU1Fzif.OgT5i7OdPYikEV9qlHzoQM.Hjjk9n9e",
+    "createdAt": "2025-11-22T03:26:52.295Z",
+    "officialCredentials": {
+      "login": "teste1515",
+      "passwordEncrypted": "251d315a434f95e0fea96f7451f77b77:352ad9eab6fcef76166962c239ae60b4",
+      "createdAt": "2025-11-22T03:26:52.295Z"
+    },
+    "profile": {
+      "avatarUrl": "",
+      "theme": "dark"
+    }
+  }
+]

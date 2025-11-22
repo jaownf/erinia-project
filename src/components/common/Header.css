@@ -152,6 +152,39 @@
   color: var(--accent);
 }
 
+/* PROFILE BUTTON */
+.profile-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: rgba(255, 215, 0, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-button:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(212, 175, 55, 0.1));
+  border-color: #ffd700;
+  color: #ffd700;
+  box-shadow: 
+    0 4px 12px rgba(255, 215, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.profile-button svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* STATUS DO SERVIDOR */
 .server-status-container {
   display: flex;

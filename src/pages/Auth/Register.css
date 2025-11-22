@@ -4,7 +4,7 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +27,7 @@
   width: 100%;
   max-width: 900px;
   padding: 20px;
+  overflow: visible;
 }
 
 .auth-card {
@@ -151,6 +152,55 @@
   position: relative;
 }
 
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper .auth-input {
+  padding-right: 50px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.password-toggle:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.password-toggle:focus {
+  outline: none;
+  color: #ffd700;
+}
+
+.helper-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 215, 0, 0.7);
+}
+
+.input-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #ff7171;
+}
+
 .auth-input {
   width: 100%;
   padding: 14px 18px;
@@ -254,6 +304,44 @@
   box-shadow: 
     0 4px 15px rgba(255, 215, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.form-status {
+  min-height: 24px;
+  font-size: 0.9rem;
+}
+
+.status-loading {
+  color: #ffd700;
+}
+
+.status-error {
+  color: #ff7171;
+}
+
+.status-success {
+  color: #7cff9b;
+}
+
+.redirect-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .auth-button.primary:hover {
@@ -383,5 +471,155 @@
   .form-row {
     flex-direction: column;
     gap: 14px;
+  }
+}
+
+/* Success Modal */
+.modal-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.success-modal {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: linear-gradient(135deg, rgba(20, 15, 10, 0.98), rgba(40, 30, 20, 0.95));
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 2001;
+  margin: 0 !important;
+}
+
+.success-modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #7cff9b, #4ade80);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(124, 255, 155, 0.4);
+}
+
+.success-modal-title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.success-modal-subtitle {
+  color: #d4af37;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.success-modal-content {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(139, 69, 19, 0.4);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.credential-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credential-label {
+  font-size: 0.85rem;
+  color: rgba(255, 215, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.credential-value {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  font-family: monospace;
+}
+
+.success-modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.success-modal-button {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffd700, #d4af37);
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 
+    0 4px 15px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.success-modal-button:hover {
+  background: linear-gradient(135deg, #ffed4e, #e4c441);
+  box-shadow: 
+    0 6px 20px rgba(255, 215, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Ensure modal is always centered on all screen sizes */
+@media (max-width: 640px) {
+  .success-modal {
+    width: 95% !important;
+    max-width: 95% !important;
+    padding: 30px 20px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 }

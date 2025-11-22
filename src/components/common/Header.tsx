@@ -1,18 +1,34 @@
-import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Header.css";
 import logo from "../../assets/logo/logo-erinia.png";
+import { readSessionToken } from "../../services/authApi";
 
 // Cabeçalho fixo com logo, navegação e botão de conta
 export default function Header() {
+  const navigate = useNavigate();
   const menu = [
     { name: "JOGO", path: "/" },
     { name: "BESTIÁRIO", path: "/bestiario" },
     { name: "HISTÓRIA", path: "/historia" },
-    { name: "CADASTRO", path: "/login" },
+    { name: "CADASTRO", path: "/register" },
   ]; 
   const [open, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = readSessionToken();
+    setIsLoggedIn(!!token);
+    
+    // Check periodically for login state changes
+    const interval = setInterval(() => {
+      const currentToken = readSessionToken();
+      setIsLoggedIn(!!currentToken);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
  return (
   <motion.header
@@ -63,6 +79,30 @@ export default function Header() {
           <span className="status-text">ONLINE</span>
         </div>
       </div>
+
+      {/* PROFILE BUTTON */}
+      <motion.button
+        className="profile-button"
+        onClick={() => navigate(isLoggedIn ? "/profile" : "/login")}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        title={isLoggedIn ? "Meu Perfil" : "Fazer Login"}
+      >
+        <motion.svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          animate={{ rotate: isLoggedIn ? 0 : 0 }}
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </motion.svg>
+      </motion.button>
 
       {/* MENU MOBILE (abre sobre tudo) */}
       <AnimatePresence>

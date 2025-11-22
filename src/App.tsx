@@ -8,6 +8,7 @@ import History from "./pages/History/History";
 import Community from "./pages/Community/Community";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Profile from "./pages/Profile/Profile";
 
 // Componente para rolar para o topo quando a rota mudar
 function ScrollToTop() {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/comunidade" element={<CommunityPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         </div>
         <Footer withBackground={true} />
