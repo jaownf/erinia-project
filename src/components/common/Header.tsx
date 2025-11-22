@@ -12,7 +12,6 @@ export default function Header() {
     { name: "JOGO", path: "/" },
     { name: "BESTIÁRIO", path: "/bestiario" },
     { name: "HISTÓRIA", path: "/historia" },
-    { name: "CADASTRO", path: "/register" },
   ]; 
   const [open, setOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
