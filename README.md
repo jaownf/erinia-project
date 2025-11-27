@@ -22,7 +22,7 @@ The design philosophy follows a **clean and immersive UI**, inspired by modern g
 | Layer | Technologies |
 
 | **Frontend** | React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap |
-| **Backend** | Node.js, Express.js |
+| **Backend** | Node.js |
 | **Build Tools** | Vite, NPM |
 | **Version Control** | Git, GitHub |
 
