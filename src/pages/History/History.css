@@ -220,55 +220,114 @@
 }
 
 .timeline-content {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
-  border: 2px solid #F2963A;
-  border-radius: 20px;
-  padding: 30px;
+  position: relative;
   max-width: 450px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.timeline-parchment {
+  background: url('/src/assets/general/pergaminho-removebg-preview.png') no-repeat center center;
+  background-size: 100% 100%;
+  padding: 30px 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .timeline-content:hover {
-  border-color: #ff6b35;
-  box-shadow: 0 15px 50px rgba(255, 107, 53, 0.3);
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.timeline-content:hover .timeline-parchment {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: rotate(-0.5deg) scale(1.02);
+  filter: brightness(1.05);
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(255, 248, 240, 0.1);
+  z-index: -1;
+  border-radius: 15px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover::before {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 .timeline-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 10px;
   display: inline-block;
-  filter: drop-shadow(0 4px 8px rgba(255, 107, 53, 0.4));
+  transition: transform 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.timeline-content:hover .timeline-icon {
+  transform: scale(1.2) rotate(5deg);
 }
 
 .timeline-year {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
   font-family: 'Cinzel', serif;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 12px;
+  color: #5a3e1f;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .timeline-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   font-family: 'Cinzel', serif;
-  color: #fff;
-  margin-bottom: 12px;
+  color: #3a2c1d;
+  margin: 5px 0 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #8b5a2b;
+  transition: width 0.3s ease;
+}
+
+.timeline-content:hover .timeline-title::after {
+  width: 100%;
 }
 
 .timeline-description {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
-  color: #E6CFAF;
+  color: #5a4a3a;
   font-family: 'Poppins', sans-serif;
-  margin: 0;
+  margin: 10px 0 0;
+  transition: color 0.3s ease;
+}
+
+.timeline-content:hover .timeline-description {
+  color: #3a2c1d;
 }
 
 .timeline-dot {
@@ -454,6 +513,154 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Parchment Timeline Section */
+.parchment-section {
+  padding: 80px 20px;
+  background: url('/src/assets/general/pergaminho-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+  min-height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 60px 0;
+}
+
+.parchment-container {
+  max-width: 1000px;
+  width: 90%;
+  padding: 60px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.parchment-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 60px;
+}
+
+.parchment-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #3a2c1d;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-event {
+  background: rgba(255, 248, 240, 0.9);
+  border-radius: 8px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e0d0b8;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #8b5a2b, #d4a76a);
+  transition: all 0.3s ease;
+}
+
+.timeline-event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #c9b18a;
+}
+
+.timeline-event:hover::before {
+  width: 6px;
+  background: linear-gradient(to bottom, #6d4c2a, #b3894f);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.event-year {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6d4c2a;
+  background: linear-gradient(135deg, #d4a76a, #8b5a2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.event-icon {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.event-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: #3a2c1d;
+  margin: 5px 0 10px;
+}
+
+.event-description {
+  font-family: 'Poppins', sans-serif;
+  color: #5a4a3a;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .parchment-section {
+    padding: 40px 10px;
+    min-height: auto;
+    background-size: cover;
+  }
+  
+  .parchment-container {
+    padding: 30px 20px;
+  }
+  
+  .parchment-content {
+    padding: 30px 20px;
+  }
+  
+  .parchment-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-event {
+    padding: 15px 20px;
+  }
+  
+  .event-title {
+    font-size: 1.2rem;
+  }
+  
+  .event-description {
+    font-size: 0.9rem;
+  }
 }
 
 /* Videos Section */

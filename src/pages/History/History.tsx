@@ -101,8 +101,8 @@ export default function History() {
       {/* TIMELINE */}
       <section className="timeline-section">
         <div className="timeline-bg-creatures">
-          <img src="/src/assets/bestiary/grid-images/saci das planices.png" className="creature-bg creature-1" />
-          <img src="/src/assets/bestiary/grid-images/Caipora.png" className="creature-bg creature-2" />
+          <img src="/src/assets/bestiary/grid-images/saci das planices.png" className="creature-bg creature-1" alt="Background creature" />
+          <img src="/src/assets/bestiary/grid-images/Caipora.png" className="creature-bg creature-2" alt="Background creature" />
         </div>
 
         <div className="timeline-container">
@@ -118,10 +118,12 @@ export default function History() {
               transition={{ duration: 0.6 }}
             >
               <div className="timeline-content">
-                <div className="timeline-icon">{event.icon}</div>
-                <div className="timeline-year">{event.year}</div>
-                <h3 className="timeline-title">{event.title}</h3>
-                <p className="timeline-description">{event.description}</p>
+                <div className="timeline-parchment">
+                  <div className="timeline-icon">{event.icon}</div>
+                  <div className="timeline-year">{event.year}</div>
+                  <h3 className="timeline-title">{event.title}</h3>
+                  <p className="timeline-description">{event.description}</p>
+                </div>
               </div>
               <div className="timeline-dot"></div>
             </motion.div>
