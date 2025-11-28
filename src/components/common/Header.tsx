@@ -5,7 +5,7 @@ import "./Header.css";
 import logo from "../../assets/logo/logo-erinia.png";
 import { readSessionToken } from "../../services/authApi";
 
-// Cabeçalho fixo com logo, navegação e botão de conta
+// cabeçalho fixo com logo, navegação e botão de conta
 export default function Header() {
   const navigate = useNavigate();
   const menu = [

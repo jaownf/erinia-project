@@ -1278,16 +1278,20 @@ const Bestiary: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="header-content">
-          <h1 className="bestiary-title">
-            <span className="title-main">Bestiário</span>
-            <span className="title-sub">de Erinia</span>
-          </h1>
+          <div className="logo-container">
+            <img 
+              src="/src/assets/logo/logo-erinia.png" 
+              alt="Erinia Logo" 
+              className="erinia-logo"
+            />
+            <h1 className="bestiary-title">
+              <span className="title-main">Bestiário</span>
+            </h1>
+          </div>
           <p className="bestiary-subtitle">
             Explore as criaturas misteriosas que habitam o mundo de Erinia
           </p>
         </div>
-        
-        
       </motion.div>
 
       {/* Controls */}
@@ -1308,12 +1312,21 @@ const Bestiary: React.FC = () => {
                 onChange={(e) => handleSearchChange(e.target.value)}
               />
               <div className="search-icon">
-                <motion.span
-                  animate={{ rotate: searchTerm ? 360 : 0 }}
+                <motion.svg
+                  animate={{ scale: searchTerm ? 1.1 : 1 }}
                   transition={{ duration: 0.3 }}
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  🔍
-                </motion.span>
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </motion.svg>
               </div>
               {searchTerm && (
                 <motion.button

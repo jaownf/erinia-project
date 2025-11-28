@@ -142,7 +142,7 @@
 /* Header */
 .bestiary-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding: 0 24px;
   position: relative;
   z-index: 1;
@@ -150,18 +150,42 @@
 
 .header-content {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.erinia-logo {
+  height: 140px;
+  width: auto;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.erinia-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.7));
 }
 
 .bestiary-title {
-  font-family: 'Cinzel';
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
-  margin-bottom: 20px;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  margin: 8px 0 12px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
+  letter-spacing: 0.5px;
 }
 
 .title-main {
@@ -169,40 +193,33 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 30px var(--accent-glow);
-  letter-spacing: -0.02em;
+  text-shadow: 0 0 20px var(--accent-glow);
   position: relative;
+  padding-bottom: 10px;
 }
 
 .title-main::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
+  width: 80px;
+  height: 3px;
   background: var(--gradient-primary);
-  border-radius: 2px;
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.title-sub {
-  font-size: 0.4em;
-  font-weight: 300;
-  color: var(--text-secondary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: 0 0 15px var(--accent-glow);
+  opacity: 0.8;
 }
 
 .bestiary-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
 
@@ -240,6 +257,7 @@
   border-radius: 10px;
   background: var(--bg-glass);
   color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 400;
   transition: all 0.3s ease;
@@ -255,15 +273,32 @@
 
 .bestiary-search::placeholder {
   color: var(--text-tertiary);
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 
 .search-icon {
   position: absolute;
   right: 20px;
-  font-size: 18px;
+  width: 20px;
+  height: 20px;
   color: var(--text-tertiary);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon svg {
+  width: 100%;
+  height: 100%;
+  color: var(--accent-secondary);
+  transition: all 0.3s ease;
+}
+
+.bestiary-search:focus + .search-icon svg {
+  color: var(--accent-primary);
+  transform: scale(1.1);
 }
 
 .clear-search {
@@ -290,50 +325,112 @@
 /* Filtros */
 .filters-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  background: var(--bg-glass);
-  padding: 24px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border-primary);
-  box-shadow: var(--shadow-secondary);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  background: rgba(10, 10, 10, 0.7);
+  padding: 28px 32px;
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filters-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  opacity: 0.7;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .filter-group label {
   font-weight: 600;
-  color: var(--text-primary);
-  font-size: 14px;
+  color: var(--accent-secondary);
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-left: 4px;
+  text-shadow: 0 0 10px rgba(247, 147, 30, 0.3);
+  font-family: 'Poppins', sans-serif;
 }
 
 .bestiary-filter {
-  padding: 12px 16px;
-  border: 2px solid var(--border-primary);
-  border-radius: 12px;
-  background: var(--bg-secondary);
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(20, 20, 25, 0.8);
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .bestiary-filter:focus {
   outline: none;
-  background: var(--bg-tertiary);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: rgba(30, 30, 35, 0.9);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.3);
 }
 
 .bestiary-filter:hover {
-  background: var(--bg-tertiary);
+  background: rgba(40, 40, 45, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Custom dropdown arrow */
+.filter-group {
+  position: relative;
+}
+
+.filter-group::after {
+  content: '▼';
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.filter-group:hover::after {
+  color: var(--accent-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  
+  .filter-group::after {
+    bottom: 16px;
+  }
 }
 
 /* Conteúdo principal */

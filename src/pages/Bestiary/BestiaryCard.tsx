@@ -71,7 +71,6 @@ const BestiaryCard: React.FC<BestiaryCardProps> = ({ creature, onClick, index = 
         <div className="card-footer">
           <div className="view-details">
             <span>Ver detalhes</span>
-            <span className="arrow">→</span>
           </div>
         </div>
       </div>
