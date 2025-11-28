@@ -383,6 +383,30 @@ export default function History() {
         </p>
       </section>
 
+      {/* VÍDEOS RELACIONADOS */}
+      <section className="videos-section">
+        <motion.h2 className="section-title">Vídeos Relacionados</motion.h2>
+        <div className="video-container">
+          <div className="video-wrapper">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/FtD36B4Ikfg?start=699"
+              title="Erinia"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="youtube-video"
+            ></iframe>
+          </div>
+          <div className="video-description">
+            <h3>A História de Erinia</h3>
+            <p>O vídeo conta a história do Erínia, um MMO brasileiro dos anos 2000 que recebeu alto investimento e tinha uma proposta ambiciosa inspirada no folclore nacional. O projeto, porém, enfrentou decisões ruins de produção e vários problemas técnicos que impediram seu crescimento. Mesmo assim, o jogo conquistou uma comunidade pequena, fiel e nostálgica, tornando-se um título cult lembrado mais pelo potencial do que pelo sucesso.</p>
+            <p>Neste vídeo, você verá depoimentos dos criadores, imagens raras do desenvolvimento e histórias incríveis da comunidade que manteve o jogo vivo por todos esses anos.</p>
+          </div>
+        </div>
+      </section>
+
       {/* VISÃO */}
       <section className="vision-section">
         <h2 className="vision-title">Nossa Visão</h2>
