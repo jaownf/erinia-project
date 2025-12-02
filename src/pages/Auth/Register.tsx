@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
@@ -100,6 +101,7 @@ export default function Register() {
       setStatus({ loading: false, success: "", error: message });
     }
   };
+const [redirectCountdown] = useState(5);
 
   return (
     <section className="auth-page">
